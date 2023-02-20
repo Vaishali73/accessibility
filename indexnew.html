@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Font Size</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="buttons">
+                <button class="btn active" onclick="document.getElementById('text').style.fontSize='1em'">Text</button>
+                <button class="btn" onclick="document.getElementById('text').style.fontSize='1.5em'">Text1</button>
+                <button class="btn" onclick="document.getElementById('text').style.fontSize='2em'">Text2</button>   
+                <button class="btn" onclick="document.getElementById('text').style.lineHeight='30px'">Line</button>
+                <button class="btn" onclick="document.getElementById('text').style.lineHeight='40px'">Line 1</button>
+                <button class="btn" onclick="document.getElementById('text').style.lineHeight='50px'">Line 2</button>
+                 <button class="btn" onclick="document.getElementById('text').style.wordSpacing='5px'">word</button>
+                <button class="btn" onclick="document.getElementById('text').style.wordSpacing='10px'">word 2</button>
+                <button class="btn" onclick="document.getElementById('text').style.wordSpacing='15px'">word 3</button>
+                 <button class="btn" onclick="document.getElementById('text').style.letterSpacing='1px'">Letter</button>
+                <button class="btn" onclick="document.getElementById('text').style.letterSpacing='2px'">Letter 2</button>
+                <button class="btn" onclick="document.getElementById('text').style.letterSpacing='3px'">Letter 3</button>
+                 <button class="btn" onclick="document.getElementById('text').style.backgroundColor='black'">Contrast</button>
+            </div>
+            <div class="content" id="text">
+                <h2>Change the Font Size</h2>
+                <p>
+                    Business Gateways India Ltd
+                </p>
+            </div>
+        </div>
+        
+        <script>
+            let buttons = document.querySelector('.buttons');
+            let btn = buttons.querySelectorAll('.btn');
+            for (var i = 0; i <btn.length; i++){
+                btn[i].addEventListener('click',function(){
+                    let current = document.getElementsByClassName('active');
+                    current[0].className = current[0].className.replace("active","");
+                    this.className += " active";
+                })
+            }
+            
+            </script>
+        
+    </body>
+    
+</html>
